@@ -1,0 +1,18 @@
+on: [push]
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Build nntask1 executable
+        run: pushd nntask1 && cargo build --release && popd
+      - name: Copy artifacts
+        run: |
+          cp nntask1/target/release/nntask1.exe .
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-neural
+          path: |
+            nntask1.exe
