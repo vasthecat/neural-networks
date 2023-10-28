@@ -1,0 +1,27 @@
+<graph>
+  <vertex>a</vertex>
+  <vertex>b</vertex>
+  <vertex>c</vertex>
+  <vertex>d</vertex>
+  <vertex>e</vertex>
+  <arc>
+    <from>a</from>
+    <to>b</to>
+    <order>1</order>
+  </arc>
+  <arc>
+    <from>a</from>
+    <to>c</to>
+    <order>2</order>
+  </arc>
+  <arc>
+    <from>c</from>
+    <to>d</to>
+    <order>3</order>
+  </arc>
+  <arc>
+    <from>c</from>
+    <to>e</to>
+    <order>4</order>
+  </arc>
+</graph>
