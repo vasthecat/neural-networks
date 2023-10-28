@@ -7,12 +7,18 @@ jobs:
         uses: actions/checkout@v3
       - name: Build nntask1 executable
         run: pushd nntask1 && cargo build --release && popd
+      - name: Build nntask2 executable
+        run: pushd nntask2 && cargo build --release && popd
       - name: Copy artifacts
         run: |
           cp nntask1/target/release/nntask1.exe .
+          cp nntask2/target/release/nntask2.exe .
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
         with:
           name: windows-neural
           path: |
+            tests
+            tester.bat
             nntask1.exe
+            nntask2.exe
