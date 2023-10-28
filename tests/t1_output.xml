@@ -1,0 +1,15 @@
+<graph>
+  <vertex>v1</vertex>
+  <vertex>v2</vertex>
+  <vertex>v3</vertex>
+  <arc>
+    <from>v2</from>
+    <to>v3</to>
+    <order>1</order>
+  </arc>
+  <arc>
+    <from>v1</from>
+    <to>v3</to>
+    <order>2</order>
+  </arc>
+</graph>
