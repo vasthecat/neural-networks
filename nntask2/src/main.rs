@@ -99,19 +99,19 @@ impl Node {
 }
 
 fn call_string(node: &Node, nodes: &HashMap<String, Node>) -> String {
-    let children = node
-        .children
+    let parents = node
+        .parents
         .iter()
         .map(|c| call_string(&nodes[c], nodes))
         .collect::<Vec<String>>();
-    format!("{}({})", node.name, children.join(", "))
+    format!("{}({})", node.name, parents.join(", "))
 }
 
 fn find_root(nodes: &HashMap<String, Node>) -> Option<String> {
     let mut root_name = String::new();
     let mut found = false;
     for (name, node) in nodes.iter() {
-        if node.parents.len() == 0 {
+        if node.children.is_empty() {
             if found {
                 return None;
             }
@@ -132,7 +132,7 @@ fn has_cycle(
         return false;
     }
     visited.insert(name.clone());
-    for node in &nodes[name].children {
+    for node in &nodes[name].parents {
         if node == root {
             return true;
         }
@@ -214,6 +214,6 @@ fn main() {
         }
     };
     output
-        .write(call_string.as_bytes())
+        .write_all(call_string.as_bytes())
         .expect("Не удалось записать вывод в файл");
 }
