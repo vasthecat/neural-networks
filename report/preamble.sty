@@ -1,0 +1,46 @@
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.5}
+
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}[block]
+{\hspace{1.25cm}\normalfont}
+{\theparagraph}{1ex}{}
+\titlespacing{\paragraph}
+{0cm}{2ex plus 1ex minus .2ex}{.4ex plus.2ex}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{tempora}
+\usepackage{minted}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{url}
+\usepackage{csquotes}
+% \usepackage[colorlinks=false]{hyperref}
+% \usepackage[sort,compress]{cite}
+
+\newcommand{\eqdef}{\stackrel {\rm def}{=}}
+\renewcommand\theFancyVerbLine{\small\arabic{FancyVerbLine}}
+\newtheorem{theorem}{Теорема}
+\newtheorem{definition}{Определение}
+\newtheorem{lemma}{Лемма}
+\newtheorem*{lemma*}{Лемма}
+\newtheorem*{example}{Пример}
+
+\setminted{fontsize=\small, breaklines=true, style=bw, linenos}
+\AtBeginEnvironment{minted}{%
+  \renewcommand{\fcolorbox}[4][]{#4}}
