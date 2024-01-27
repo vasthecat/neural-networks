@@ -17,8 +17,8 @@ jobs:
         run: |
           cp nntask1/target/release/nntask1.exe .
           cp nntask2/target/release/nntask2.exe .
-          cp nntask3/target/release/nntask2.exe .
-          cp nntask4/target/release/nntask2.exe .
+          cp nntask3/target/release/nntask3.exe .
+          cp nntask4/target/release/nntask4.exe .
           cp report/report.pdf .
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
