@@ -5,4 +5,5 @@
 
 .\nntask3.exe --input1 tests\t1_output.xml --input2 tests\t3_ops.json --output1 t3_output.txt
 
-.\nntask4.exe --input1 tests\t4_w.json --input2 tests\t4_x.txt --output1 t4_output.txt
+.\nntask4.exe convert --weights tests\t4_w.json --output tests\t4_model.json
+.\nntask4.exe run --model tests\t4_model.json --input tests\t4_x.txt --output tests\t4_output.txt

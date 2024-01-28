@@ -152,7 +152,7 @@ $n_i$ --- порядковый номер дуги в списке всех за
 \inputminted{xml}{../tests/t3_output.txt}
 
 
-\section{Построение многослойной нейронной сети}
+\section{Построение многослойной нейронной сети}
 
 \subsection*{Вход}
 
@@ -187,6 +187,8 @@ x_1, x_2, ..., x_n
 
 \begin{enumerate}
   \item
+    Сериализованная многослойная нейронная сеть (в формате XML или JSON) с полносвязной межслойной структурой.
+  \item
     Файл с выходным вектором – результатом вычислений НС в формате:
     \begin{minted}[]{text}
 y_1, y_2, ..., y_n
@@ -204,12 +206,23 @@ y_1, y_2, ..., y_n
 Также задан файл \verb|tests/t4_x.txt| с входным вектором:
 \inputminted{json}{../tests/t4_x.txt}
 
-При запуске программы командой
+Для использования программы необходимо сконвертировать заданный файл с весами в
+модель, которую может использовать библиотека burn.
+
+Для этого необходимо запустить подкоманду \texttt{convert}:
 \begin{minted}[breaklines,fontsize=\small]{text}
-./nntask3 --input1 ./tests/t4_w.json --input2 ./tests/t4_x.txt --output1 ./tests/t4_output.txt
+./nntask4 --weights ./tests/t4_w.json --output ./tests/t4_model.json
 \end{minted}
-в результате получим файл \verb|tests/t4_output.txt|
+
+После этого, модель можно использовать для вычислений НС:
+\begin{minted}[breaklines,fontsize=\small]{text}
+./nntask4 run --model ./tests/t4_model.json --input ./tests/t4_x.txt --output ./tests/t4_output.txt
+\end{minted}
+
+В результате работы программы получим файл \verb|tests/t4_output.txt|
 \inputminted{xml}{../tests/t4_output.txt}
+а также серилизованную модель \verb|tests/t4_model.json|
+\inputminted{xml}{../tests/t4_model.json}
 
 
 \end{document}

@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "float": "f32",
+    "int": "f32",
+    "format": "burn_core::record::file::PrettyJsonFileRecorder<burn_core::record::settings::FullPrecisionSettings>",
+    "version": "0.11.1",
+    "settings": "FullPrecisionSettings"
+  },
+  "item": {
+    "layers": [
+      {
+        "weight": {
+          "id": "1a77f782-9729-48f4-ae6c-feb4b098efa4",
+          "param": {
+            "value": [
+              0.47519493,
+              0.4809203,
+              0.43698898,
+              0.01570549,
+              0.13929695,
+              0.20037642,
+              0.94338185,
+              0.6869903,
+              0.17561406
+            ],
+            "shape": [
+              3,
+              3
+            ]
+          }
+        },
+        "bias": null
+      },
+      {
+        "weight": {
+          "id": "149e9eae-09c6-4ded-9ec4-dd2dbbb13942",
+          "param": {
+            "value": [
+              0.042224072,
+              0.15331022,
+              0.46463567,
+              0.600016,
+              0.22606114,
+              0.53012127,
+              0.19651134,
+              0.7498836,
+              0.28721556
+            ],
+            "shape": [
+              3,
+              3
+            ]
+          }
+        },
+        "bias": null
+      },
+      {
+        "weight": {
+          "id": "b85dec71-9c34-4aca-94c5-23cce7439c1b",
+          "param": {
+            "value": [
+              0.11837615,
+              0.56759465,
+              0.8574872,
+              0.00927218,
+              0.9748636,
+              0.30471203,
+              0.7504597,
+              0.3050131,
+              0.33768997
+            ],
+            "shape": [
+              3,
+              3
+            ]
+          }
+        },
+        "bias": null
+      }
+    ]
+  }
+}
